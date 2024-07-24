@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Thrive solution</title>
+  <!-- nav bar css -->
+  <link rel="stylesheet" href="nav.css">
+  <!-- nav abr js -->
+  <script src="nav.js" defer></script>
+  <!-- about us css -->
+  <link rel="stylesheet" href="about.css">
+  <!-- about us js -->
+  <script src="about.js" defer></script>
+    <!-- CSS link contact us -->
+    <link rel="stylesheet" href="contact.css">
+        <!-- JS link contact us -->
+        <script src="contact.js" defer></script>
+         <!-- cutom css footer -->
+    <link rel="stylesheet" href="footer.css">
+    <!-- font awesome footer -->
+    <link href="https://fonts.googleapis.com/css2?family=Jacquard+24&display=swap" rel="stylesheet">
+    <!-- font awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+<!-- icons cdn footer -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+    <!-- request css link -->
+    <link rel="stylesheet" href="request.css">
+    <!-- request js link -->
+    <script src="request.js" defer></script>
+
+  <!-- icon css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- bootstrap css link -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- cutsom css link for slider -->
+  <link rel="stylesheet" href="slider.css">
+  <!-- provider html -->
+  <link rel="stylesheet" href="pr.html">
+  <!-- notification js -->
+  <script src="notification.js" defer></script>
+    <!-- font awsome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <!-- custom css link profile -->
+    <link rel="stylesheet" href="profile.css" />
+    <!-- custom js link profile -->
+    <script src="profile.js" defer></script>
+    <!-- profile html -->
+    <link rel="stylesheet" href="profile.html">
+    <!-- road html -->
+    <link rel="stylesheet" href="road.html">
+     <!-- safety html -->
+     <link rel="stylesheet" href="safety.html">
+    <style>
+      .card {
+  margin: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-img-top {
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 16px;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .card {
+    margin: 10px;
+  }
+  .card-img-top {
+    height: 100px;
+  }
+}
+
+.card-container:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+    </style>
+</head>
+<body>
+  <!-- nav bar start -->
+  <nav class="nav-bar" style="position: relative;">
+    <li><img src="img4.png" alt="Company Logo" class="logo"></li>
+    <ul>
+      <li><a href="main.html">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li class="dropdown" id="d">
+        <a href="#">Services</a>
+        <div class="dropdown-content" id="c">
+          <a href="main.html">Home</a>
+          <a href="road.html">Roadside</a>
+          <a href="gas.html">gas station</a>
+        </div>
+      </li>
+      <li><a href="#contact">Contact Us</a></li>
+      <li><a href="safety.html">Safety</a></li>
+    <!-- profile start -->
+     <!-- user icon -->
+      
+    <div class="dropdown user-dropdown">
+      <a href="#" class="dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="data:image/png;base64,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" alt="User" class="profile-image">
+      </a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown" id="drop">
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><a class="dropdown-item" href="profile.html">Settings</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item change-profile-image" href="#">Change Profile Image</a></li>
+      </ul>
+    </div>
+    <input type="file" class="profile-image-upload" accept="image/*" hidden>
+<!-- profile end -->
+    </ul>
+    <div class="search-bar-container">
+      <input type="search" class="search-bar" placeholder="Search...">
+      <button class="search-btn"><i class="fas fa-search"></i></button>
+    </div>
+    <i class="fas fa-bell notification-icon" id="notification-icon">
+      <span class="notification-count" id="notification-count">0</span>
+    </i>
+    <li><a href="signin.html">Sign In</a></li>
+      <li><a href="signup.html">Sign Up</a></li>
+  </nav>
+  <!-- nav bar end -->
+      <!-- bootstrap slider -->
+
+      <div id="carouselExampleDark" class="carousel carousel-dark slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <img src="https://images.pexels.com/photos/943930/pexels-photo-943930.jpeg?auto=compress&cs=tinysrgb&w=600" class="d-block " alt="towing">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>First slide label</h5>
+              <p>Some representative placeholder content for the first slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="https://images.pexels.com/photos/13060987/pexels-photo-13060987.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block" alt="towing">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>Some representative placeholder content for the second slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.pexels.com/photos/13151224/pexels-photo-13151224.jpeg?auto=compress&cs=tinysrgb&w=600" class="d-block h-50%" alt="towing">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>Some representative placeholder content for the third slide.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <!-- bootstrap slider end -->
+      <!-- bootstrap cards -->
+<div class="row justify-content-between">
+  <div class="col-md-4">
+    <div class="card card-container" style="width: 18rem;">
+      <img src="https://cdn-icons-png.flaticon.com/128/2252/2252184.png" class="card-img-top" alt="first step" style="width: 50%; margin-left: 20%;">
+      <div class="card-body">
+        <h5 class="card-title">Frist step one</h5>
+        <p class="card-text">>The first step is selecting a service you want, such as roadside repairing, towing, fuel delivery and etc..... </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card card-container" style="width: 18rem;">
+      <img src="https://static.vecteezy.com/system/resources/previews/022/979/907/non_2x/hand-click-submit-button-icon-for-graphic-design-logo-website-social-media-mobile-app-ui-illustration-vector.jpg" class="card-img-top" alt="secind step" style="width: 70%; margin-left: 15%;">
+      <div class="card-body">
+        <h5 class="card-title">Second step</h5>
+        <p class="card-text">Your second step is clicking on the submit button to achieve the service you want.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card card-container" style="width: 18rem;">
+      <img src="https://th.bing.com/th/id/R.ffbfa99cd9aba419e02a57753611982c?rik=6GYTOl7VVjxRRA&pid=ImgRaw&r=0" class="card-img-top" alt="Third step" style="width: 50%; margin-left: 20%;">
+      <div class="card-body">
+        <h5 class="card-title">Third step </h5>
+        <p class="card-text">Your third step: just wait a moment to get a response from our service providers. </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card card-container" style="width: 18rem;">
+      <img src="https://th.bing.com/th/id/R.07f9d44509a3533c17174787ed1396d3?rik=rryeQ6qZIKuaMw&pid=ImgRaw&r=0" class="card-img-top" alt="last step" style="width: 60%; margin-left: 20%;">
+      <div class="card-body">
+        <h5 class="card-title">Foruth step</h5>
+        <p class="card-text">Congratulations you have already done our service provider find you</p>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- bootstrap cards end -->
+     <!-- notification dropdown menu -->
+<div class="notification-dropdown" id="notification-dropdown">
+  <h5>Notifications</h5>
+  <ul id="notification-list">
+    <!-- notifications will be displayed here -->
+  </ul>
+</div>
+     <!-- request section start -->
+     <div class="service-container">
+      <h2>Choose a Service:</h2>
+      <p id="p"> 
+        Frist step: The first step is selecting a service you want, such as roadside repairing, towing, fuel delivery and etc...
+        Second step: Your second step is clicking on the submit button to achieve the service you want.
+        Third step: just wait a moment to get a response from our service providers.
+      </p>
+      <form id="service-form">
+        <div id="notification-list">
+          <select id="service-Select">
+            <option value="">Select a Service</option>
+            <option value="roadside-repair">Roadside Repair</option>
+            <option value="gas-station-services">Gas Station Services</option>
+            <option value="towing-services">Towing Services</option>
+            <option value="ac-repairing-services">AC Repairing Services</option>
+            <option value="refrigerator-repair-services">Refrigerator Repair Services</option>
+            <option value="fuel-delivery-services">Fuel Delivery Services</option>
+          </select>
+        </div>
+        <button type="button" id="open-box-btn" style="background-color: lightgreen; color: black;"><b>continue</b></button>
+      </form>
+      
+      <div id="roadside-repair" class="service-box" style="display:none; border: 1px solid #ccc; padding: 20px;
+      margin-top: 10px;">
+        <h3>Roadside Repair</h3>
+        <p>Stuck on the side of the road? Don't panic!
+
+          We're here to get you back on the road fast. Our expert roadside assistance team offers:
+          <form id="offer-form">
+            <div>
+              <input type="checkbox" id="offer1" name="offer" value="500">
+              <label for="offer1"><b>1st offer = </b>RS 500</label>
+            </div>
+            <div>
+              <input type="checkbox" id="offer2" name="offer" value="1000">
+              <label for="offer2"><b>2nd offer = </b>RS 1000</label>
+            </div>
+            <div>
+              <input type="checkbox" id="offer3" name="offer" value="1500">
+              <label for="offer3"><b>3rd offer = </b>RS 1500</label>
+            </div>
+          </form>
+        <button id="submit-btn">Submit</button>
+      </div>
+      
+      <div id="gas-station-services" class="service-box" style="display:none;">
+        <h3>Gas Station Services</h3>
+        <p>Need to refill your gas? We can help you.
+          <form id="offer-form">
+            <div>
+              <input type="checkbox" id="offer1" name="offer" value="500">
+              <label for="offer1"><b>1st offer = </b>RS 500</label>
+            </div>
+            <div>
+              <input type="checkbox" id="offer2" name="offer" value="1000">
+              <label for="offer2"><b>2nd offer = </b>RS 1000</label>
+            </div>
+            <div>
+              <input type="checkbox" id="offer3" name="offer" value="1500">
+              <label for="offer3"><b>3rd offer = </b>RS 1500</label>
+            </div>
+          </form>
+        <button id="submit-gas-station">Submit</button>
+      </div>
+      
+      <div id="towing-services" class="service-box" style="display:none;">
+        <h3>Towing Services</h3>
+        <p>Need to tow your car? We can help you.
+          <form id="offer-form">
+            <div>
+              <input type="checkbox" id="offer1" name="offer" value="500">
+              <label for="offer1"><b>1st offer = </b>RS 500</label>
+            </div>
+            <div>
+              <input type="checkbox" id="offer2" name="offer" value="1000">
+              <label for="offer2"><b>2nd offer = </b>RS 1000</label>
+            </div>
+            <div>
+              <input type="checkbox" id="offer3" name="offer" value="1500">
+              <label for="offer3"><b>3rd offer = </b>RS 1500</label>
+            </div>
+          </form>
+        <button id="submit-towing">Submit</button>
+      </div>
+      
+      <div id="ac-repairing-services" class="service-box" style="display:none;">
+        <h3>AC Repairing Services</h3>
+        <p>Need to repair your AC? We can help you.
+          <form id="offer-form">
+            <div>
+              <input type="checkbox" id="offer1" name="offer" value="500">
+              <label for="offer1"><b>1st offer = </b>RS 500</label>
+            </div>
+            <div>
+              <input type="checkbox" id="offer2" name="offer" value="1000">
+              <label for="offer2"><b>2nd offer = </b>RS 1000</label>
+            </div>
+            <div>
+              <input type="checkbox" id="offer3" name="offer" value="1500">
+              <label for="offer3"><b>3rd offer = </b>RS 1500</label>
+            </div>
+          </form>
+        <button id="submit-ac-repair">Submit</button>
+      </div>
+      
+      <div id="refrigerator-repair-services" class="service-box" style="display:none;">
+        <h3>Refrigerator Repair Services</h3>
+        <p>Need to repair your refrigerator? We can help you.
+          <form id="offer-form">
+            <div>
+              <input type="checkbox" id="offer1" name="offer" value="500">
+              <label for="offer1"><b>1st offer = </b>RS 500</label>
+            </div>
+            <div>
+              <input type="checkbox" id="offer2" name="offer" value="1000">
+              <label for="offer2"><b>2nd offer = </b>RS 1000</label>
+            </div>
+            <div>
+              <input type="checkbox" id="offer3" name="offer" value="1500">
+              <label for="offer3"><b>3rd offer = </b>RS 1500</label>
+            </div>
+          </form>
+        <button id="submit-refrigerator-repair">Submit</button>
+      </div>
+      
+      <div id="fuel-delivery-services" class="service-box" style="display:none;">
+        <h3>Fuel Delivery Services</h3>
+        <p>Need to deliver your fuel? We can help you.
+          <form id="offer-form">
+            <div>
+              <input type="checkbox" id="offer1" name="offer" value="500">
+              <label for="offer1"><b>1st offer = </b>RS 500</label>
+            </div>
+            <div>
+              <input type="checkbox" id="offer2" name="offer" value="1000">
+              <label for="offer2"><b>2nd offer = </b>RS 1000</label>
+            </div>
+            <div>
+              <input type="checkbox" id="offer3" name="offer" value="1500">
+              <label for="offer3"><b>3rd offer = </b>RS 1500</label>
+            </div>
+          </form>
+        <button id="submit-fuel-delivery">Submit</button>
+      </div>
+    </div>
+     <!-- request section end -->
+     <!-- About Us Section -->
+<section id="about" class="about-us">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h2 class="section-title">About Us</h2>
+        <p class="section-subtitle">Our Story, Our Mission, and Our Values</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <img src="img4.png" alt="About Us Image" class="img-fluid">
+      </div>
+      <div class="col-md-6">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Donec sed odio dui.</p>
+        <p>Our mission is to provide exceptional roadside assistance, towing, and repair services to our customers. We strive to build long-term relationships with our clients by providing them with reliable, efficient, and affordable solutions.</p>
+        <ul class="list-unstyled">
+          <li><i class="fas fa-check-circle"></i> Quality Service</li>
+          <li><i class="fas fa-check-circle"></i> Competitive Pricing</li>
+          <li><i class="fas fa-check-circle"></i> 24/7 Emergency Support</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h3 class="section-subtitle">Meet Our Team</h3>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="team-member">
+              <img src="https://th.bing.com/th/id/R.e467022361e41ada4417cc8ec3ac1bba?rik=povGxJrAEB6VVQ&pid=ImgRaw&r=0" alt="Team Member 1" class="img-fluid">
+              <h5>John Doe</h5>
+              <p>Founder & CEO</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="team-member">
+              <img src="https://i0.wp.com/trailerbabu.com/wp-content/uploads/2019/04/tiger-shroff.jpg?fit=1362%2C2048&ssl=1" alt="Team Member 2" class="img-fluid">
+              <h5>Jane Smith</h5>
+              <p>Operations Manager</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="team-member">
+              <img src="https://www.masala.com/public/images/2019/11/11/Shah-Rukh-Khan-Baadhshah-Of-Bollywood.jpg" alt="Team Member 3" class="img-fluid">
+              <h5>Bob Johnson</h5>
+              <p>Service Technician</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- About Us Section End -->
+    <!-- contact us section start -->
+    <div class="contact" id="contact">
+      <form id="contactForm" action="#" onclick="name()">
+          <h3>Contact Us</h3>
+          <input type="text" id="name" placeholder="Your name" required>
+          <input type="mail" id="email" placeholder="Your email" required>
+          <textarea id="message" rows="4" placeholder="How can we help you" required></textarea>
+          <button type="submit">Send</button>
+      </form>
+  </div>
+    <!-- contact us section end -->
+     <!-- footer start -->
+<div class="footer-b">
+  <footer>
+    <div class="footer-c">
+      <div class="email-bar">
+        <h1>SIGN UP</h1>
+        <input type="email" placeholder="Enter your email address">
+        <button>SIGN UP</button>
+      </div>
+      <hr>
+      <div class="footer-row">
+        <div class="footer-column">
+          <h4 class="c">Company</h4>
+          <ul>
+            <li><a href="#heading">About Us</a></li>
+            <li><a href="mailto:hamzamateen57@gmail.com">Contact Us</a></li>
+            <li><a href="#map">services</a></li>
+            <li><a href="#">Company</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Shop</h4>
+          <ul id="s">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">service providers</a></li>
+            <li><a href="./profile.html#cardss">Order Status</a></li>
+          </ul>
+        </div>
+        <div class="footer-column" id="f">
+          <h4>Follow</h4>
+          <div class="social-media">
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+            <a href="https://pk.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+     <!-- footer end -->
+  <!-- bootstrap js link -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>

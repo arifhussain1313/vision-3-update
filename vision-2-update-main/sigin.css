@@ -1,0 +1,50 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.form-label {
+    font-weight: 600;
+}
+
+input[type="range"] {
+    width: 100%;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+button[type="button"] {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+button[type="button"]:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+a.link-primary {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a.link-primary:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap css link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Sign Up</title>
+    <!-- custom css link -->
+    <link rel="stylesheet" href="signup.css">
+    <!-- custom js link -->
+    <script src="signup.js" defer></script>
+</head>
+<body>
+    <!--container div --> 
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h1 class="text-center mb-4">Sign Up</h1>
+                        <p class="text-center text-muted mb-4">Please fill in this form to create an account.</p>
+                        <form action="" class="row g-3" id="signup-form">
+                            <div class="col-md-6">
+                                <label for="name" class="form-label">Enter Your Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter Your Name">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="contact" class="form-label">Contact Number</label>
+                                <input type="number" class="form-control" id="contact" placeholder="Enter your number">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="repeat-password" class="form-label">Repeat Password</label>
+                                <input type="password" class="form-control" id="repeat-password" placeholder="Enter your password">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="CITY" class="form-label">Location</label>
+                                <select id="CITY" class="form-select">
+                                    <!-- options -->
+                                    <option value="KHI">KARACHI</option>
+                                    <option value="HYD">HYDERABAAD</option>
+                                    <option value="JAMSHORO">JAMSHORO</option>
+                                    <option value="SUKKUR">SUKKUR</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="SERVICE" class="form-label">Service</label>
+                                <select id="SERVICE" class="form-select">
+                                    <!-- services options -->
+                                    <option value="machanic">MECHANIC</option>
+                                    <option value="electrician">ELECTRICIAN</option>
+                                    <option value="PLUMBER">PLUMBER</option>
+                                    <option value="CARWASH">CARWASH</option>
+                                    <option value="fuel delivery">FUEL DELIVERY</option>
+                                    <option value="BATTERY JUMP START">BATTERY JUMP-START</option>
+                                    <option value="ACCIDENT">ACCIDENT SUPPORT</option>
+                                    <option value="LOCKOUT SERVICE">LOCKOUT SERVICE</option>
+                                    <option value="TIRE CHANGE">TIRE CHANGE</option>
+                                    <option value="MOBILE OIL CHANGE">MOBILE OIL CHANGE</option>
+                                    <option value="ROAD SIDE REPAIR">ROAD SIDE REPAIR</option>
+                                    <option value="EMERGENCY TRANSPORATION">EMERGENCY TRANSPORATION</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="time" class="form-label">Select Time</label>
+                                <input type="time" class="form-control" id="time">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="vol" class="form-label">Rating</label>
+                                <input type="range" class="form-range" id="vol" name="Rating">
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="remember" checked>
+                                    <label class="form-check-label" for="remember">Remember me</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <p>By creating an account you agree to our <a href="#" class="link-primary">Terms & Privacy</a>.</p>
+                            </div>
+                            <div class="col-12 d-flex justify-content-between">
+                                <button type="button" class="btn btn-secondary">Cancel</button>
+                                <button type="submit" class="btn btn-primary">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

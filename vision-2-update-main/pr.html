@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- provider js -->
+    <script src="pr.js" defer></script>
+</head>
+<body>
+    <script>
+        // Get the selected service from localStorage
+        var selectedService = localStorage.getItem("selectedService");
+    
+        // Show the selected service as an alert
+        if (selectedService) {
+          alert("Selected Service: " + selectedService);
+          // Clear the localStorage after showing the alert
+          localStorage.removeItem("selectedService");
+        } else {
+          alert("No service selected.");
+        }
+      </script>
+</body>
+</html>

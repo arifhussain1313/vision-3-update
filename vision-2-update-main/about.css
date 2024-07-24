@@ -1,0 +1,39 @@
+.about-us {
+    background-color: #f7f7f7;
+    padding: 50px 0;
+  }
+  
+  .section-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .section-subtitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+  
+  .team-member {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .team-member h5 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .team-member p {
+    font-size: 16px;
+    color: #666;
+  }

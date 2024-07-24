@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    transition: color 0.3s;
+}
+
+h1:hover {
+    color: #007bff;
+}
+
+h2 {
+    font-size: 28px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+    transition: color 0.3s;
+}
+
+ul li:before {
+    content: "\2022";
+    font-size: 18px;
+    color: #007bff;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+ul li:hover {
+    color: #007bff;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Specific List Styles */
+.tips-list li:hover:before {
+    color: #0056b3;
+}
+
+.resources-list li {
+    margin-bottom: 15px;
+}
+/* Button Styles */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+</style>
+<body>
+    <div class="container">
+        <h1>Safety Page</h1>
+        <p>Welcome to our safety page! This page is designed to provide you with important information and resources to help you stay safe online.</p>
+        <h2>Online Safety Tips</h2>
+        <ul class="tips-list">
+            <li>Never share your personal information with strangers online.</li>
+            <li>Be cautious when clicking on links or downloading attachments from unknown sources.</li>
+            <li>Use strong and unique passwords for all of your online accounts.</li>
+            <li>Avoid using public computers or public Wi-Fi to access sensitive information.</li>
+            <li>Report any suspicious activity or harassment to the appropriate authorities.</li>
+        </ul>
+        <h2>Resources</h2>
+        <ul class="resources-list">
+            <li><a href="https://www.staysafeonline.org/" target="_blank">StaySafeOnline.org</a></li>
+            <li><a href="https://www.onlinesafety.gov/" target="_blank">Onlinesafety.gov</a></li>
+            <li><a href="https://www.cybersecurity.gov/" target="_blank">Cybersecurity.gov</a></li>
+        </ul>
+        <p>If you have any concerns or questions about online safety, please don't hesitate to reach out to us.</p>
+    </div>
+    <a href="main.html" class="btn">Back to Home</a>
+</body>
+</html>

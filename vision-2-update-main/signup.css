@@ -1,0 +1,189 @@
+/* Global Styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Open Sans, sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* container */
+.container {
+  max-width: 100%; /* Use full width of the viewport */
+  padding: 20px;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex-direction: row; /* Horizontal layout */
+  flex-wrap: nowrap; /* No wrapping */
+  overflow-x: auto; /* Allow horizontal scrolling */
+  overflow-y: hidden; /* Disable vertical scrolling */
+}
+
+/* row */
+.row {
+  flex-direction: row;
+  align-items: center;
+  margin-right: 20px; /* Space between fields */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+/* input text, label, select */
+[type="text"], input[type="number"], input[type="email"], input[type="password"], select {
+  width: 200px; /* Set a fixed width for input fields */
+  padding: 10px;
+  margin-right: 20px; /* Space between inputs */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+/* input submit */
+input[type="submit"], .cancelbtn, .signupbtn {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 150px; /* Set a fixed width for buttons */
+  margin-right: 20px; /* Space between buttons */
+}
+/* Form Styles */
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.label {
+  width: 150px;
+  text-align: right;
+  margin-right: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.input-field {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.input-field:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styles */
+
+.button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.button:hover {
+  background-color: #3e8e41;
+}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Horizontal Layout Styles */
+
+.horizontal-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.horizontal-layout.label {
+  width: auto;
+  margin-right: 10px;
+}
+
+.horizontal-layout.input-field {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.horizontal-layout.button {
+  margin-left: 20px;
+}
+
+/* Responsive Design Adjustments */
+
+/* Medium Screen Size (768px - 992px) */
+@media (min-width: 768px) and (max-width: 992px) {
+ .container {
+    max-width: 600px;
+  }
+}
+
+/* Small Screen Size (480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+ .container {
+    max-width: 400px;
+  }
+ .horizontal-layout {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+ .horizontal-layout.label {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+ .horizontal-layout.input-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+ .horizontal-layout.button {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+/* Extra Small Screen Size (320px - 479px) */
+@media (max-width: 479px) {
+ .container {
+    max-width: 300px;
+  }
+ .horizontal-layout {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+ .horizontal-layout.label {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+ .horizontal-layout.input-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+ .horizontal-layout.button {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
