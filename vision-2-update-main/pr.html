@@ -3,23 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- provider js -->
-    <script src="pr.js" defer></script>
+    <title>Selected Service</title>
 </head>
 <body>
+    <h1>Selected Service</h1>
+    <div id="selected-service"></div>
+    <h2>Selected Offers</h2>
+    <ul id="selected-offers"></ul>
+
     <script>
-        // Get the selected service from localStorage
-        var selectedService = localStorage.getItem("selectedService");
-    
-        // Show the selected service as an alert
-        if (selectedService) {
-          alert("Selected Service: " + selectedService);
-          // Clear the localStorage after showing the alert
-          localStorage.removeItem("selectedService");
-        } else {
-          alert("No service selected.");
-        }
-      </script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Retrieve the selected service and selected offers from localStorage
+            const selectedService = localStorage.getItem("selectedService");
+            const selectedOffers = JSON.parse(localStorage.getItem("selectedOffers"));
+
+            // Display the selected service
+            document.getElementById('selected-service').textContent = `Selected Service: ${selectedService}`;
+
+            // Display the selected offers
+            const selectedOffersList = document.getElementById('selected-offers');
+            selectedOffers.forEach(function(offer) {
+                const li = document.createElement('li');
+                li.textContent = `Offer: ${offer}`;
+                selectedOffersList.appendChild(li);
+            });
+        });
+    </script>
 </body>
 </html>
