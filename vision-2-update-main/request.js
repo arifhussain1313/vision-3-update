@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
           console.log("Stored selected offers:", selectedOffers);
 
           // Redirect to pr.html
-          window.location.href = "pr.html";
+          window.open("pr.html","_blank");
       });
   });
 
