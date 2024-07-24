@@ -17,16 +17,27 @@
             const selectedService = localStorage.getItem("selectedService");
             const selectedOffers = JSON.parse(localStorage.getItem("selectedOffers"));
 
-            // Display the selected service
-            document.getElementById('selected-service').textContent = `Selected Service: ${selectedService}`;
+            console.log("Retrieved selected service:", selectedService);
+            console.log("Retrieved selected offers:", selectedOffers);
 
-            // Display the selected offers
-            const selectedOffersList = document.getElementById('selected-offers');
-            selectedOffers.forEach(function(offer) {
-                const li = document.createElement('li');
-                li.textContent = `Offer: ${offer}`;
-                selectedOffersList.appendChild(li);
-            });
+            // Check if the selected service exists
+            if (selectedService) {
+                document.getElementById('selected-service').textContent = `Selected Service: ${selectedService}`;
+            } else {
+                document.getElementById('selected-service').textContent = `No service selected`;
+            }
+
+            // Check if the selected offers exist
+            if (selectedOffers && selectedOffers.length > 0) {
+                const selectedOffersList = document.getElementById('selected-offers');
+                selectedOffers.forEach(function(offer) {
+                    const li = document.createElement('li');
+                    li.textContent = `Offer: ${offer}`;
+                    selectedOffersList.appendChild(li);
+                });
+            } else {
+                document.getElementById('selected-offers').textContent = `No offers selected`;
+            }
         });
     </script>
 </body>
