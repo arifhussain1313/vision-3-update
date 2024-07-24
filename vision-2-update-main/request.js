@@ -86,16 +86,21 @@ document.addEventListener('DOMContentLoaded', function() {
       notificationCount.textContent = selectedServicesCount;
   }
 // notification drop down list
-  function addNotification(service, offers) {
-      const li = document.createElement('li');
-      li.textContent = `Service selected: ${service}, Offers: ${offers.join(", ")}`;
-      notificationList.appendChild(li);
-
-      // Store the notification in localStorage
-      let notifications = JSON.parse(localStorage.getItem('notifications')) || [];
-      notifications.push({ service, offers });
-      localStorage.setItem('notifications', JSON.stringify(notifications));
+function addNotification(service, offers) {
+    const notificationItem = document.createElement('div');
+    notificationItem.classList.add('notification-item');
+    notificationItem.innerHTML = `
+      <span class="service-name">${service}</span>
+      <span class="offer-name">${offers.join(", ")}</span>
+    `;
+    notificationList.appendChild(notificationItem);
+  
+    // Store the notification in localStorage
+    let notifications = JSON.parse(localStorage.getItem('notifications')) || [];
+    notifications.push({ service, offers });
+    localStorage.setItem('notifications', JSON.stringify(notifications));
   }
+  
 
   notificationIcon.addEventListener('click', function() {
       notificationDropdown.classList.toggle('show');
@@ -103,12 +108,21 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   function loadNotifications() {
-      const notifications = JSON.parse(localStorage.getItem('notifications')) || [];
-      notificationList.innerHTML = '';
-      notifications.forEach(notification => {
-          const li = document.createElement('li');
-          li.textContent = `Service selected: ${notification.service}, Offers: ${notification.offers.join(", ")}`;
-          notificationList.appendChild(li);
-      });
+    const notifications = JSON.parse(localStorage.getItem('notifications')) || [];
+    notificationList.innerHTML = '';
+    notifications.forEach(notification => {
+      const notificationItem = document.createElement('div');
+      notificationItem.classList.add('notification-item');
+      notificationItem.innerHTML = `
+        <span class="service-name">${notification.service}</span>
+        <span class="offer-name">${notification.offers.join(", ")}</span>
+      `;
+      notificationList.appendChild(notificationItem);
+    });
   }
+
+  notificationIcon.addEventListener('click', function() {
+    notificationDropdown.classList.toggle('show');
+    loadNotifications();
+  });
 });

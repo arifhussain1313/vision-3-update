@@ -253,3 +253,14 @@ button {
 .notification-icon:hover + #notification-dropdown {
   display: block;
 }
+
+#notification-icon.has-notifications::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #f00;
+  border-radius: 50%;
+}
