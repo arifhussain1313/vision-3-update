@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function updateNotificationCount() {
       notificationCount.textContent = selectedServicesCount;
   }
-
+// notification drop down list
   function addNotification(service, offers) {
       const li = document.createElement('li');
       li.textContent = `Service selected: ${service}, Offers: ${offers.join(", ")}`;

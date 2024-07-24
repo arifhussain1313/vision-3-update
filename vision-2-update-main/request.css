@@ -201,11 +201,16 @@ button {
 #notification-dropdown {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
-  color: #000;
-  min-width: 160px;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  color: #333;
+  min-width: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 #notification-dropdown.show {
@@ -215,10 +220,37 @@ button {
 #notification-list {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
 #notification-list li {
-  padding: 8px 16px;
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
   text-decoration: none;
   display: block;
+  cursor: pointer;
 }
+
+#notification-list li:hover {
+  background-color: #f7f7f7;
+}
+
+#notification-list li:last-child {
+  border-bottom: none;
+}
+
+#notification-list li a {
+  text-decoration: none;
+  color: #333;
+}
+
+#notification-list li a:hover {
+  color: #337ab7;
+}
+
+/* show dropdown on icon click */
+.notification-icon:hover + #notification-dropdown {
+  display: block;
+}
+This code uses the pos
