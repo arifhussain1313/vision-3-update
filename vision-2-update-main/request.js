@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const submitBtns = document.getElementsByClassName('submit-btn');
   const notificationIcon = document.getElementById('notification-icon');
   const notificationCount = document.getElementById('notification-count');
-  const notificationDropdown = document.getElementById('notification-dropdown');
+  const notificationDropdown = document.getElementById('notificationDropdown');
   const notificationList = document.getElementById('notification-list');
   let selectedServicesCount = 0;
 
@@ -87,39 +87,59 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 // notification drop down list
 function addNotification(service, offers) {
+  const notificationItem = document.createElement('div');
+  notificationItem.classList.add('notification-item');
+  notificationItem.innerHTML = `
+    <span class="service-name">${service}</span>
+    <span class="offer-name">${offers.join(", ")}</span>
+    <button class="send-btn">Send</button>
+  `;
+  notificationList.appendChild(notificationItem);
+
+  // Store the notification in localStorage
+  let notifications = JSON.parse(localStorage.getItem('notifications')) || [];
+  notifications.push({ service, offers });
+  localStorage.setItem('notifications', JSON.stringify(notifications));
+
+  // Add event listener to send button
+  const sendBtn = notificationItem.querySelector('.send-btn');
+  sendBtn.addEventListener('click', function() {
+    // Send the selected service and offer
+    const selectedService = service;
+    const selectedOffer = offers.join(", ");
+    console.log(`Sending ${selectedService} with offer ${selectedOffer}`);
+
+    // You can add your logic to send the data here
+    // For example, you can make an AJAX request to a server
+    // or use a messaging service like Firebase Cloud Messaging
+  });
+}
+
+function loadNotifications() {
+  const notifications = JSON.parse(localStorage.getItem('notifications')) || [];
+  notificationList.innerHTML = '';
+  notifications.forEach(notification => {
     const notificationItem = document.createElement('div');
     notificationItem.classList.add('notification-item');
     notificationItem.innerHTML = `
-      <span class="service-name">${service}</span>
-      <span class="offer-name">${offers.join(", ")}</span>
+      <span class="service-name">${notification.service}</span>
+      <span class="offer-name">${notification.offers[0]}</span>
     `;
-    notificationList.appendChild(notificationItem);
-  
-    // Store the notification in localStorage
-    let notifications = JSON.parse(localStorage.getItem('notifications')) || [];
-    notifications.push({ service, offers });
-    localStorage.setItem('notifications', JSON.stringify(notifications));
-  }
-  
-
-  notificationIcon.addEventListener('click', function() {
-      notificationDropdown.classList.toggle('show');
-      loadNotifications();
-  });
-
-  function loadNotifications() {
-    const notifications = JSON.parse(localStorage.getItem('notifications')) || [];
-    notificationList.innerHTML = '';
-    notifications.forEach(notification => {
-      const notificationItem = document.createElement('div');
-      notificationItem.classList.add('notification-item');
-      notificationItem.innerHTML = `
-        <span class="service-name">${notification.service}</span>
-        <span class="offer-name">${notification.offers.join(", ")}</span>
-      `;
-      notificationList.appendChild(notificationItem);
+    // const sendBtn = document.createElement('button');
+    // sendBtn.classList.add('send-btn');
+    sendBtn.textContent = 'Send';
+    sendBtn.addEventListener('click', function() {
+      const selectedService = notification.service;
+      const selectedOffer = notification.offers[0];
+      console.log(`Sending ${selectedService} with offer ${selectedOffer}`);
+      // Add your logic to send the data here
+      // For example, you can make an AJAX request to a server
+      // or use a messaging service like Firebase Cloud Messaging
     });
-  }
+    // notificationItem.appendChild(sendBtn);
+    notificationList.appendChild(notificationItem);
+  });
+}
 
   notificationIcon.addEventListener('click', function() {
     notificationDropdown.classList.toggle('show');
