@@ -197,7 +197,6 @@ button {
   margin: auto;
 }
 
-/* notification drop down list */
 /* Style the notification icon */
 .notification-icon {
   position: relative;
@@ -206,7 +205,7 @@ button {
 }
 
 /* Style the dropdown list */
-.notification-dropdown {
+.notificationDropdown {
   display: none;
   position: absolute;
   top: 100%;
@@ -222,7 +221,7 @@ button {
 }
 
 /* Show the dropdown list on hover */
-.notification-icon:hover .notification-dropdown {
+.notification-icon:hover .notificationDropdown {
   display: block;
 }
 
@@ -230,6 +229,7 @@ button {
 .notification-item {
   padding: 12px 16px;
   border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .notification-item:last-child {
@@ -240,60 +240,59 @@ button {
   background-color: #f1f1f1;
 }
 
-/* Style the send button */
-.send-btn {
-  display: inline-block;
-  margin-left: 10px;
-  padding: 5px 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-.send-btn:hover {
-  background-color: #0056b3;
-}
-
-/* Optional: style the service name and offer name */
-.service-name {
-  font-weight: bold;
-}
-
-.offer-name {
-  color: #555;
-}
-
 /* Style the notification list */
-#notification-list {
+#notification {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-#notification-list li {
+#notification li {
   padding: 10px 15px;
   border-bottom: 1px solid #ddd;
   width: 100%;
   text-decoration: none;
   display: block;
   cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
 
-#notification-list li:hover {
+#notification li:hover {
   background-color: #f7f7f7;
 }
 
-#notification-list li:last-child {
+#notification li:last-child {
   border-bottom: none;
 }
 
-#notification-list li a {
+#notification li a {
   text-decoration: none;
   color: #333;
+  transition: color 0.3s ease-in-out;
 }
 
-#notification-list li a:hover {
+#notification li a:hover {
   color: #337ab7;
+}
+
+/* Style the service and offer names */
+.service-name {
+  font-weight: bold;
+  display: none;
+}
+
+.offer-name {
+  color: #555;
+  display: none;
+}
+
+/* Show the service and offer names on hover */
+.notification-item:hover .service-name,
+.notification-item:hover .offer-name {
+  display: block;
+}
+
+/* Add some spacing between the service and offer names */
+.notification-item:hover .service-name {
+  margin-bottom: 5px;
 }
