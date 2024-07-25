@@ -198,61 +198,15 @@ button {
 }
 
 /* notification drop down list */
-#notification-dropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #fff;
-  color: #333;
-  min-width: 200px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  border-radius: 5px;
-  padding: 10px;
-}
-
-#notification-dropdown.show {
-  display: block;
-}
-
-#notification-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-#notification-list li {
-  padding: 10px 15px;
-  border-bottom: 1px solid #ddd;
-  width: 100%;
-  text-decoration: none;
-  display: block;
+/* Style the notification icon */
+.notification-icon {
+  position: relative;
+  display: inline-block;
   cursor: pointer;
 }
 
-#notification-list li:hover {
-  background-color: #f7f7f7;
-}
-
-#notification-list li:last-child {
-  border-bottom: none;
-}
-
-#notification-list li a {
-  text-decoration: none;
-  color: #333;
-}
-
-#notification-list li a:hover {
-  color: #337ab7;
-}
-
-/* show dropdown on icon click */
-/* Notification Dropdown List */
-
-#notification-dropdown {
+/* Style the dropdown list */
+.notification-dropdown {
   display: none;
   position: absolute;
   top: 100%;
@@ -267,10 +221,51 @@ button {
   padding: 10px;
 }
 
-#notification-dropdown.show {
+/* Show the dropdown list on hover */
+.notification-icon:hover .notification-dropdown {
   display: block;
 }
 
+/* Style the items in the dropdown list */
+.notification-item {
+  padding: 12px 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+.notification-item:hover {
+  background-color: #f1f1f1;
+}
+
+/* Style the send button */
+.send-btn {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.send-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Optional: style the service name and offer name */
+.service-name {
+  font-weight: bold;
+}
+
+.offer-name {
+  color: #555;
+}
+
+/* Style the notification list */
 #notification-list {
   list-style-type: none;
   padding: 0;
